@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Video Chroma Key</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Webcam Background Remover</h1>
+    </header>
+
+    <div class="main-content">
+      <div class="video-section">
+        <video id="webcam" autoplay playsinline muted></video>
+        <canvas id="outputCanvas"></canvas>
+      </div>
+
+      <div class="controls-panel">
+        <button id="startBtn">Start Camera</button>
+        
+        <div class="control-group">
+          <label>Key Color Mode</label>
+          <div class="radio-group">
+            <label><input type="radio" name="keyMode" value="green" checked> Green Screen</label>
+            <label><input type="radio" name="keyMode" value="custom"> Custom Color</label>
+          </div>
+        </div>
+
+        <div class="control-group" id="pickerGroup">
+          <label for="keyColor">Pick Target Color</label>
+          <input type="color" id="keyColor" value="#00ff00">
+        </div>
+
+        <div class="control-group">
+          <label for="tolerance">Color Similarity: <span id="tolValue">40</span></label>
+          <input type="range" id="tolerance" min="1" max="150" value="40">
+        </div>
+
+        <div class="control-group">
+          <label for="smoothness">Edge Smoothness: <span id="smoothValue">10</span></label>
+          <input type="range" id="smoothness" min="0" max="50" value="10">
+        </div>
+
+        <div class="control-group">
+          <label>Background Overlay</label>
+          <select id="bgSelect">
+            <option value="transparent">Transparent / Checkerboard</option>
+            <option value="color">Solid Color</option>
+            <option value="image">Custom Image</option>
+          </select>
+        </div>
+
+        <div class="control-group hidden" id="bgColorGroup">
+          <label for="bgColor">Background Color</label>
+          <input type="color" id="bgColor" value="#111827">
+        </div>
+
+        <div class="control-group hidden" id="bgImageGroup">
+          <label for="bgFile">Upload Background</label>
+          <input type="file" id="bgFile" accept="image/*">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
