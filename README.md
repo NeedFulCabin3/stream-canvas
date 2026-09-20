@@ -1,4 +1,4 @@
-# chroma-stream-canvas
+# Chroma Stream Canvas
 
 Real-time, client-side webcam background keying and composite rendering using HTML5 Canvas pixel manipulation and custom Euclidean distance calculations.
 
@@ -74,3 +74,11 @@ chroma-stream-canvas/
 ├── script.js                 # Pixel loop, matrix calculations, and canvas compositing
 └── style.css                 # Interface styling and transparent grid patterns
 ```
+
+##Roadmap
+
+[ ] Add Web Worker support to offload getImageData pixel parsing from the main UI thread.
+
+[ ] Implement WebGL shader pipelines to perform chroma keying on the GPU for 1080p+ streams.
+
+[ ] Add HSV/HSL color space tolerance modes to reduce sensitivity to lighting variations.
