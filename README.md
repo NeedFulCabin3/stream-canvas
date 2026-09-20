@@ -75,7 +75,7 @@ chroma-stream-canvas/
 └── style.css                 # Interface styling and transparent grid patterns
 ```
 
-##Roadmap
+## Roadmap
 
 [ ] Add Web Worker support to offload getImageData pixel parsing from the main UI thread.
 
