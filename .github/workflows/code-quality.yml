@@ -1,0 +1,25 @@
+name: Code Health Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/node-core@v4
+        with:
+          node-version: '20'
+
+      - name: Lint HTML and JavaScript
+        run: |
+          npx htmlhint index.html
+          npx eslint script.js --no-eslintrc --env browser,es2021
